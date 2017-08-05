@@ -5,14 +5,26 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var arc1 = {
+var articles = {
+    'arc1':{
     
     title: 'Article One | Mohan',
     heading: 'Article One',
     date: 'Aug 5, 2017',
     content:`<p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> `
-    
-
+            },
+    'arc2':{    
+    title: 'Article Two | Mohan',
+    heading: 'Article Two',
+    date: 'Aug 10, 2017',
+    content:`<p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> `
+        },
+    'arc3':{
+    title: 'Article Three | Mohan',
+    heading: 'Article Three',
+    date: 'Aug 15, 2017',
+    content:`<p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> `
+    }
 };
 
 function creatTemplate (data) {
@@ -67,8 +79,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/arc1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'arc1.html'));
+app.get('/:any', function (req, res) {
+    
+    var arc =req.params.any;
+    res.send(creatTemplate(articles(arc)));
 });
 
 
