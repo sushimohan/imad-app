@@ -6,7 +6,12 @@ var app = express();
 app.use(morgan('combined'));
 
 var content = {
-    title: 'Article One'
+    
+    title: 'Article One',
+    heading: 'Article One',
+    date: 'Aug 5, 2017',
+    content:`<p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> <p>This is Mohan Raj K article</p> `
+    
 }
 
 app.get('/', function (req, res) {
