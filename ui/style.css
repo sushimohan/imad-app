@@ -19,8 +19,7 @@ body {
 .img-medium {
     height: 200px;
 }
-
-            .container {
+.container {
             max-width: 800px;
             margin: 0 auto;
             color: rgba(0, 86, 255, 0.81);
@@ -30,4 +29,8 @@ body {
             padding-right: 20px;
             
             }
- 
+
+.container1{
+                
+                padding-left: 600px;
+            } 
