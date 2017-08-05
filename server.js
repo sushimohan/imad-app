@@ -17,8 +17,12 @@ var arc1 = {
 
 function creatTemplate (data) {
     
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
     
-var htmlTemplate = `    
+    var htmlTemplate = `    
         <head>
         <title>
             ${title}
@@ -44,8 +48,8 @@ var htmlTemplate = `
             </dir>
         </dir>
     </body>    
-</html>
 `;    
+   return htmlTemplate;
 }
 
 
